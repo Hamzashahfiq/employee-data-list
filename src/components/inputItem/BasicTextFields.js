@@ -12,7 +12,9 @@ export default function BasicTextFields(props) {
       noValidate
       autoComplete="off"
     >
-      <TextField id="outlined-basic" onChange={props.inputChange}  value={props.inputValue} label={props.inputLabel}  placeholder={props. placeholder} variant="outlined" required />
+      <TextField type={props.inputType} id="outlined-basic" onChange={props.inputChange} 
+       value={props.inputValue} label={props.inputLabel}  
+       placeholder={props. placeholder} variant="outlined" required />
     </Box>
   );
 }

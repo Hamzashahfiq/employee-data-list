@@ -2,30 +2,24 @@
 export const EmployeeInputText = [{
     lable: 'First Name',
     placeholder: 'First Name',
-    value:'firstName',
-    onChange:'setFirstName'
+    type: 'Text'
 },
 
 {
     lable: 'Last Name',
     placeholder: 'Last Name',
-    value:'lastName',
-    onChange:'setLastName'
+    type: 'Text'
 },
 
 {
     lable: 'Email ID',
     placeholder: 'Email ID',
-    value:'email',
-    onChange:'setEmail'
-
+    type: 'email'
 },
 {
     lable: 'Mobile No',
     placeholder: 'Mobile No',
-    value:'mobileNo',
-    onChange:'setMobileNo'
-
+    type: 'Text'
 },
 
 ]

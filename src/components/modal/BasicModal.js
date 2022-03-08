@@ -11,7 +11,7 @@ import ButtonBasic from "../button/ButtonBasic"
 
 const style = {
   position: 'absolute',
-  top: '40%',
+  top: '50%',
   left: '50%',
   transform: 'translate(-50%, -50%)',
   maxWidth: 600,
@@ -20,31 +20,11 @@ const style = {
   boxShadow: 24,
 };
 
-export default function BasicModal({resetFormData}) {
+export default function BasicModal({resetFormData, stateData, formDateValue}) {
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
-  const handleClose = () => {
-    setOpen(false)
-  };
+  const handleClose = () => setOpen(false);
   
-
-
-
-  
-  
-  // const [firstName, setFirstName] = useState('')
-  // const [lastName, setLastName] = useState('')
-  // const [email, setEmail] = useState('')
-  // const [phoneNo, setPhoneNo] = useState('')
-
-  // const clearFormHandler = () => {
-  //   setFirstName('')    
-  //   setLastName('')    
-  //   setEmail('')    
-  //   setPhoneNo('')    
-
-  // }
-
   return (
     <div>
       <Button onClick={handleOpen} variant="contained" style={{ textTransform: 'capitalize', backgroundColor: '#002984' }}>Add Employee</Button>
@@ -60,9 +40,9 @@ export default function BasicModal({resetFormData}) {
           </Box>
 
           <Box sx={{ px: 20, py: 2 }}>
-            {EmployeeInputText.map((item) => {
+            {EmployeeInputText.map((item, index) => {
               return (
-                <BasicTextFields inputLabel={item.lable} placeholder={item.placeholder} inputChange ={item.onChange} inputValue= {item.value} />
+                <BasicTextFields key={index} inputType={item.type} inputLabel={item.lable} placeholder={item.placeholder} inputChange = {stateData} inputValue= {formDateValue} />
               )
             })}
             <Box sx={{ m: 2, textAlign: 'center' }}>

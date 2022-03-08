@@ -16,15 +16,19 @@ const initialState = {
 export default function Home() {
     const [formData, setFormData] = useState (initialState);
 
-    const resetFormData = () => {
-        console.log("resetFormData function called");
-      setFormData(initialState)
+    const resetFormDataHandler = () => {
+        alert("Hallo clear")
+        setFormData(initialState)
+    }
+    const setStateDataHandler = (e) => {
+        setFormData({...formData, firstName : e.target.value})
     }
     return (
         <div>
             <Header  headerText="Employees List" />
             <Container fixed style= {{padding:'10px 0px', margin:'50px auto' }}>
-                <BasicModal resetFormData={resetFormData} />
+                <BasicModal resetFormData={resetFormDataHandler} stateData = {setStateDataHandler} 
+                formDateValue = {formData.firstName}  />
             </Container>
         </div>
     )
