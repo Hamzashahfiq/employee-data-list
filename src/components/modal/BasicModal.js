@@ -1,13 +1,16 @@
-import * as React  from 'react';
-import {useState} from 'react';
+import * as React from 'react';
+import { useState } from 'react';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
 import Header from '../header/Header'
-import BasicTextFields from '../inputItem/BasicTextFields';
-import { EmployeeInputText } from '../../constant/EmployeeInputText';
+// import BasicTextFields from '../inputItem/BasicTextFields';
+// import { EmployeeInputText } from '../../constant/EmployeeInputText';
 import ButtonBasic from "../button/ButtonBasic"
+import TextField from '@mui/material/TextField';
+import { textAlign } from '@mui/system';
+
 
 const style = {
   position: 'absolute',
@@ -20,11 +23,12 @@ const style = {
   boxShadow: 24,
 };
 
-export default function BasicModal({resetFormData, stateData, formDateValue}) {
+export default function BasicModal({ resetFormData,submitHandler, formDataValue, setStateFirstName, setStateLastName, setStateEmail, setStatePhoneNo }) {
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
-  
+
+
   return (
     <div>
       <Button onClick={handleOpen} variant="contained" style={{ textTransform: 'capitalize', backgroundColor: '#002984' }}>Add Employee</Button>
@@ -38,21 +42,37 @@ export default function BasicModal({resetFormData, stateData, formDateValue}) {
           <Box>
             <Header headerText="Employees Information" />
           </Box>
-
-          <Box sx={{ px: 20, py: 2 }}>
-            {EmployeeInputText.map((item, index) => {
+          <form action="">
+            <Box sx={{ py: 2 }}>
+              {/* {EmployeeInputText.map((item, index) => {
+                  console.log(item.value)
+                  console.log(formDataValue)
               return (
-                <BasicTextFields key={index} inputType={item.type} inputLabel={item.lable} placeholder={item.placeholder} inputChange = {stateData} inputValue= {formDateValue} />
+                <BasicTextFields key={index} inputType={item.type} inputLabel={item.lable} 
+                placeholder={item.placeholder} inputChange = {setStateData} inputValue= {formDataValue} />
               )
-            })}
-            <Box sx={{ m: 2, textAlign: 'center' }}>
-              <Button variant="contained" style={{ textTransform: 'capitalize', backgroundColor: '#002984', margin: '8px' }}>Submit</Button>
-              <Button onClick={resetFormData} variant="contained" style={{ textTransform: 'capitalize', backgroundColor: '#002984', margin: '8px' }}>Clear</Button>
+            })} */}
+              <Box sx={{ p: 1, textAlign: 'center', width: { xs: 'auto', md: '584px' } }}>
+                <TextField type='text' id="outlined-basic" sx={{ m: 1, width: { xs: 'auto', md: '260px' } }} onChange={setStateFirstName}
+                  value={formDataValue.firstName} label='First Name' placeholder='First Name' variant="outlined" required />
+                <TextField type='text' id="outlined-basic" onChange={setStateLastName} sx={{ m: 1, width: { xs: 'auto', md: '260px' } }}
+                  value={formDataValue.lastName} label='Last Name' placeholder='Last Name' variant="outlined" required />
+                <TextField type='Email' id="outlined-basic" onChange={setStateEmail} sx={{ m: 1, width: { xs: 'auto', md: '260px' } }}
+                  value={formDataValue.email} label='Email' placeholder='Email' variant="outlined" required />
+                <TextField type='text' id="outlined-basic" onChange={setStatePhoneNo} sx={{ m: 1, width: { xs: 'auto', md: '260px' } }}
+                  value={formDataValue.phoneNo} label='Phone No' placeholder='Phone No' variant="outlined" />
+              </Box>
+
+
+              <Box sx={{ p: 1, textAlign: 'center', width: { xs: 'auto', md: '584px' } }}>
+                <Button onClick={submitHandler} variant="contained" style={{ textTransform: 'capitalize', backgroundColor: '#002984', margin: '8px', width: '80px' }}>Submit</Button>
+                <Button onClick={resetFormData} variant="contained" style={{ textTransform: 'capitalize', backgroundColor: '#ff6f00', margin: '8px', width: '80px' }}>Clear</Button>
+              </Box>
             </Box>
-          </Box>
+          </form>
 
           <Box sx={{ textAlign: 'end' }}>
-            <Button onClick={handleClose} variant="contained" style={{ textTransform: 'capitalize', backgroundColor: '#002984', margin: '5px' }}>Cancel</Button>
+            <Button onClick={handleClose} variant="contained" style={{ textTransform: 'capitalize', backgroundColor: '#c4001d', margin: '5px' }}>Cancel</Button>
           </Box>
         </Box>
       </Modal>

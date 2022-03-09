@@ -1,25 +1,32 @@
 
+
+
 export const EmployeeInputText = [{
     lable: 'First Name',
     placeholder: 'First Name',
-    type: 'Text'
+    type: 'Text',
+    value: '.firstName'
 },
 
 {
     lable: 'Last Name',
     placeholder: 'Last Name',
-    type: 'Text'
+    type: 'Text',
+    value: '.lastName'
 },
 
 {
     lable: 'Email ID',
     placeholder: 'Email ID',
-    type: 'email'
+    type: 'email',
+    value: '.email'
 },
 {
     lable: 'Mobile No',
     placeholder: 'Mobile No',
-    type: 'Text'
+    type: 'Text',
+    value: '.phoneNo'
+
 },
 
 ]
