@@ -24,7 +24,7 @@ export default function Home() {
     const [updateBtnFlage, setupdateBtnFlage] = useState(false)
     const [viewBtnFlage, setViewBtnFlage] = useState(true)
     const [updateUuid, setUpdateUuid] = useState(0);
-    const [alertOpen, setAlertOpen] = useState({ opened: false, massage: "Employee form will be close", type: "info" });
+    const [alertOpen, setAlertOpen] = useState({ opened: false, massage: "Employee form has been closed", type: "info" });
     const [alertDialogOpen, setAlertDialogOpen] = useState({ opened: false, title: "Deletion Confirmation", text: "Do you want to delete this record?" });
     const [deleteUuid, setDeleteUuid] = useState("");
 
@@ -56,7 +56,7 @@ export default function Home() {
         setFormData(initialState)
         setViewBtnFlage(true)
         setupdateBtnFlage(false)
-        setAlertOpen({ ...alertOpen, opened: true,massage: "Employee form will be close", type: "info" });
+        setAlertOpen({ ...alertOpen, opened: true,massage: "Employee form has been closed", type: "info" });
     };
 
     const resetFormDataHandler = () => {
@@ -95,7 +95,7 @@ export default function Home() {
             setEmployeeData([...EmployeeData, employee])
             setFormData(initialState)
             setOpen(false)
-            setAlertOpen({ ...alertOpen, opened: true,massage: "Employee data will be submitted", type: "success"  });
+            setAlertOpen({ ...alertOpen, opened: true,massage: "Employee data has been submitted", type: "success"  });
         }
     }
     const deleteHandler = (uuid) => {
@@ -107,7 +107,7 @@ export default function Home() {
         let newEmployeeData = EmployeeData.filter((item) => item.uuid !== deleteUuid)
         setEmployeeData(newEmployeeData)
         setAlertDialogOpen({ ...alertDialogOpen, opened: false });
-        setAlertOpen({ ...alertOpen, opened: true,massage: "Clicked record will be deleted", type: "success"  });
+        setAlertOpen({ ...alertOpen, opened: true,massage: "Clicked record has been deleted", type: "success"  });
 
     }
     const dialogDisDeleteHandler= () => {
@@ -161,7 +161,7 @@ export default function Home() {
         setOpen(false)
         setFormData(initialState)
         setupdateBtnFlage(false)
-        setAlertOpen({ ...alertOpen, opened: true,massage: "Clicked record will be update", type: "success"  });
+        setAlertOpen({ ...alertOpen, opened: true,massage: "Clicked record has been updated", type: "success"  });
 
 
     }

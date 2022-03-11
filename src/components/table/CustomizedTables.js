@@ -60,12 +60,12 @@ export default function CustomizedTables(props) {
       <Table sx={{ minWidth: 600 }} aria-label="customized table">
         <TableHead>
           <TableRow>
-            <StyledTableCell style={{ backgroundColor: "#3f51b5" }}>Sr#</StyledTableCell>
-            <StyledTableCell style={{ backgroundColor: "#3f51b5" }}>First Name</StyledTableCell>
-            <StyledTableCell style={{ backgroundColor: "#3f51b5" }}>Last Name</StyledTableCell>
-            <StyledTableCell style={{ backgroundColor: "#3f51b5" }}>Email</StyledTableCell>
-            <StyledTableCell style={{ backgroundColor: "#3f51b5" }}>Phone_No</StyledTableCell>
-            <StyledTableCell style={{ backgroundColor: "#3f51b5" }}>Action</StyledTableCell>
+            <StyledTableCell style={{ backgroundColor: "#ad1457" }}>Sr#</StyledTableCell>
+            <StyledTableCell style={{ backgroundColor: "#ad1457" }}>First Name</StyledTableCell>
+            <StyledTableCell style={{ backgroundColor: "#ad1457" }}>Last Name</StyledTableCell>
+            <StyledTableCell style={{ backgroundColor: "#ad1457" }}>Email</StyledTableCell>
+            <StyledTableCell style={{ backgroundColor: "#ad1457" }}>Phone_No</StyledTableCell>
+            <StyledTableCell style={{ backgroundColor: "#ad1457" }}>Action</StyledTableCell>
           </TableRow>
         </TableHead>
         <TableBody>

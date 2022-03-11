@@ -8,7 +8,7 @@ export default function ActionAlerts({alertOpen,handleClickAlert, handleCloseAle
   return (
     
     <Stack spacing={2} sx={{ width: '100%'}}>
-      <Snackbar open={alertOpen.opened}  anchorOrigin={{ vertical: 'top', horizontal: 'right' }} autoHideDuration={2000} onClose={handleCloseAlert}>
+      <Snackbar open={alertOpen.opened}  anchorOrigin={{ vertical: 'top', horizontal: 'right' }} autoHideDuration={4000} onClose={handleCloseAlert}>
         <Alert onClose={handleCloseAlert} severity={alertOpen.type} sx={{ width: '100%', mt:5 }}>
           {alertOpen.massage}
         </Alert>

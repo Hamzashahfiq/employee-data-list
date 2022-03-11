@@ -40,7 +40,7 @@ export default function BasicModal({ resetFormData, updateBtnFlageProp, updateCt
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
       >
-        <Box sx={style}>
+        <Box sx={{...style, minWidth:{xs:'100%',sm:'auto'}}}>
           <Box>
             <Header headerText="Employees Information" />
           </Box>
